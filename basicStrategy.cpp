@@ -7,20 +7,37 @@ using namespace std;
 
 int main(void){
     bool c; //continue
+    int outs,N;
+    double EV,betAmount,potSize,winPercentage,potOdds,EVzero;
     do{
-    double EV,betAmount,potSize,winPercentage,potOdds;
+
+ 
     cout<<"Pot Size : $";
     cin >>potSize;
     cout<<endl<<"bet amount : $";
     cin>>betAmount;
-    cout<<endl<<"Win Percentage : %";
-    cin>>winPercentage;
+    cout<<endl<<"Number or outs : %";
+    cin>>outs;
+    cout<<endl<<"Number of cards you will see";
+    cin>>N;
 
+    winPercentage=exactWin(outs,N);
+    EVzero=zeroEV(winPercentage,potSize);
     EV=expected_Value(winPercentage,potSize,betAmount);
-    potOdds=Pot_Odds(betAmount,potSize);
+    potOdds= Pot_Odds(betAmount,potSize);
+  
 
     cout << "Expected Value = $" << EV <<endl;
-    cout << "Pot Odds = %"<<potOdds<<endl;
+    cout << "Pot Odds = %"<<potOdds*100<<endl;
+    cout << "max bet we should call = $"<<EVzero<<endl;
+    if (winPercentage>potOdds){
+    cout<<" You might want to call"<<endl;}
+    else{
+        cout<<" You might not want to call "<<endl;
+    }
+    }
+    cout <<
+
 
 
     cout<<"Again? 1=yes 0=no";cin>>c;
