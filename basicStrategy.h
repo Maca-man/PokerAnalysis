@@ -44,5 +44,7 @@ Max bet we should call EV=0
 double zeroEV(double winPercentage,double potSize){
     return -winPercentage*potSize/(2*winPercentage-1);
 }
-
+double impliedOdds(double winPercentage, double potSize, double betAmount){
+    return (betAmount/winPercentage)-(potSize+betAmount+betAmount);
+}
 
