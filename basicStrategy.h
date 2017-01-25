@@ -10,7 +10,7 @@ EV = Win% * WinAmt - Lose% * LoseAmt
 double expected_Value(double winPercent, double potSize,double betAmount){
     double WinAmount=potSize+betAmount;
     
-    return (winPercent/100)*WinAmount-(1-(winPercent/100))*(betAmount);
+    return (winPercent)*WinAmount- (1-winPercent)*(betAmount);
 }
 /**
 Pot Odds are the relationship of the call amount to the size of the pot
@@ -42,7 +42,7 @@ double exactWin(int outs,int N){
 Max bet we should call EV=0
 */
 double zeroEV(double winPercentage,double potSize){
-    return winPercentage*potSize/(2*winPercentage-1);
+    return -winPercentage*potSize/(2*winPercentage-1);
 }
 
 
