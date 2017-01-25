@@ -26,7 +26,7 @@ int main(void){
     EV=expected_Value(winPercentage,potSize,betAmount);
     potOdds= Pot_Odds(betAmount,potSize);
   
-
+    cout << "Win Percentage : %"<<winPercentage*100<<endl;
     cout << "Expected Value = $" << EV <<endl;
     cout << "Pot Odds = %"<<potOdds*100<<endl;
     cout << "max bet we should call = $"<<EVzero<<endl;
@@ -35,8 +35,8 @@ int main(void){
     else{
         cout<<" You might not want to call "<<endl;
     }
-    }
-    cout <<
+    
+    
 
 
 
